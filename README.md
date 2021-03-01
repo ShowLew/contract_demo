@@ -20,6 +20,10 @@ contract.re_create_renting_phase # 保存之后自动更新阶段信息
 
 * 定时任务
 ```ruby
-rake contract:create_contracts
+rake contract:create_contract_invoices
 ```
-
+* 图片式例 
+```ruby
+"/assets/images/contract.png"
+"/assets/images/renting_phase.png"
+```
