@@ -1,7 +1,7 @@
 class CreateInvoices < ActiveRecord::Migration[5.1]
   def change
     create_table :invoices do |t|
-      t.belongs_to :contact
+      t.belongs_to :contract
       t.belongs_to :renting_phase
 
       t.datetime :pay_at, null: false, comment: "交租日"

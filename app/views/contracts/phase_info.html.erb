@@ -1,0 +1,27 @@
+<div style="align:center; width:100%; ">
+  <table class="table table-striped">
+    <tr>
+      <th>交租阶段开始结束时间</th>
+      <th>交租日</th>
+      <th>交租阶段总租金</th>
+    </tr>
+    <tbody>
+    <% @renting_phases.each do |renting_phase| %>
+      <tr>
+        <td><%= "#{renting_phase.begin_at.strftime("%Y-%m-%d")} - #{renting_phase.end_at.strftime("%Y-%m-%d")}" %></td>
+        <td><%= renting_phase.pay_at.strftime("%Y-%m-%d") %></td>
+        <td><%= renting_phase.phase_money %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<style type="text/css">
+  table tr th, td {
+    border: 1px solid #000;
+  }
+  table {
+    border-collapse:collapse;
+  }
+</style>

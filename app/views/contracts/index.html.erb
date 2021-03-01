@@ -1,0 +1,37 @@
+<div style="align:center; width:100%; ">
+  <table class="table table-striped">
+    <tr>
+      <th>开始日期</th>
+      <th>结束日期</th>
+      <th>合同总金额</th>
+      <th>月租金</th>
+      <th>交租周期</th>
+      <th>操作</th>
+    </tr>
+    <tbody>
+    <% @contracts.each do |contract| %>
+      <tr>
+        <td><%= contract.begin_at.strftime("%Y-%m-%d") %></td>
+        <td><%= contract.end_at.strftime("%Y-%m-%d") %></td>
+        <td><%= contract.total_money.to_s %></td>
+        <td><%= contract.month_money.to_s %></td>
+        <td><%= contract.phase %></td>
+        <td>
+          <%= link_to "阶段信息", phase_info_contract_path(contract) %>
+          <%= link_to "账单信息", invoice_info_contract_path(contract) %>
+          <%= link_to "账单明细", line_items_contract_path(contract) %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
+<style type="text/css">
+  table tr th, td {
+    border: 1px solid #000;
+  }
+    table {
+      border-collapse:collapse;
+    }
+</style>
